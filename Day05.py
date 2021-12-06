@@ -193,3 +193,136 @@ for count in points.values():
         dangerPointCount += 1
 
 print(dangerPointCount)
+
+# BONUS VISUALIZATION
+
+import os
+import matplotlib as mpl
+from matplotlib import cm
+import matplotlib.pyplot as plt
+
+mpl.use("Agg")
+
+scriptsPath = os.path.dirname(os.path.realpath(__file__))
+os.chdir(scriptsPath)
+print("\nCurrent working directory: " + str(os.getcwd()) + "\n")
+
+rawFile = open("input.txt")
+contents = rawFile.read()
+data = contents.splitlines()
+
+def splitter(sequence, delimiter):
+    splitA = []
+    splitB = []
+    for i in sequence:
+        split = i.split(delimiter)
+        splitA.append(split[0])
+        splitB.append(split[1])
+    return splitA, splitB
+
+
+splitA, splitB = splitter(data, " -> ")
+
+x1, y1 = splitter(splitA, ",")
+x2, y2 = splitter(splitB, ",")
+
+pointsA = []
+pointsB = []
+
+for i in range(len(x1)):
+    pointsA.append([int(x1[i]), int(y1[i])])
+    pointsB.append([int(x2[i]), int(y2[i])])
+
+points = {}
+maxGridX = 0
+maxGridY = 0
+for i in range(len(pointsA)):
+    pointA = pointsA[i]
+    pointB = pointsB[i]
+    linePoints = []
+    if pointA[0] == pointB[0]:
+        # veritcal line
+        x = pointA[0]
+        maxY = max([pointA[1], pointB[1]])
+        minY = min([pointA[1], pointB[1]])
+        maxGridX = max([x, maxGridX])
+        maxGridY = max([maxY, maxGridY])
+        for y in range(minY, maxY + 1):
+            linePoints.append((x, y))
+    elif pointA[1] == pointB[1]:
+        # horizontal line
+        y = pointA[1]
+        maxX = max([pointA[0], pointB[0]])
+        minX = min([pointA[0], pointB[0]])
+        maxGridX = max([maxX, maxGridX])
+        maxGridY = max([y, maxGridY])
+        for x in range(minX, maxX + 1):
+            linePoints.append((x, y))
+    else:
+        # diagonal line
+        startX = pointA[0]
+        startY = pointA[1]
+        endX = pointB[0]
+        endY = pointB[1]
+
+        xIsBackwards = endX < startX
+        yIsBackwards = endY < startY
+        maxGridX = max([startX, endX, maxGridX])
+        maxGridY = max([startX, endX, maxGridY])
+
+        y = startY
+
+        for x in range(
+            startX, endX + (-1 if xIsBackwards else 1), -1 if xIsBackwards else 1
+        ):
+            linePoints.append((x, y))
+            y = (y - 1) if yIsBackwards else (y + 1)
+    for point in linePoints:
+        if points.get(point):
+            points[point] += 1
+        else:
+            points[point] = 1
+
+intersectPoints = []
+for i in points.values():
+    intersectPoints.append(i)
+
+maxIntersect = max(intersectPoints)
+
+fig = plt.figure(figsize=(10, 10))
+fig.patch.set_facecolor("k")
+ax = fig.add_subplot(111)
+plt.gca().set_position([0, 0, 1, 1])
+plt.axis("off")
+
+valuesX = []
+valuesY = []
+valuesZ = []
+
+for i in points:
+    valuesX.append(i[0])
+    valuesY.append(i[1])
+    valuesZ.append(points[i])
+
+cMap = cm.get_cmap("inferno", 12)
+
+for color in range(maxIntersect):
+
+    color += 1
+
+    extractX = []
+    extractY = []
+    extractZ = []
+
+    for i in range(len(valuesZ)):
+        if valuesZ[i] == color:
+            extractX.append(valuesX[i])
+            extractY.append(valuesY[i])
+            extractZ.append(valuesZ[i])
+
+    plt.scatter(
+        extractX, extractY, marker=".", s=color * 10, color=cMap(color / maxIntersect)
+    )
+
+plt.savefig("Day05_HydrothermalVents", dpi=600)
+
