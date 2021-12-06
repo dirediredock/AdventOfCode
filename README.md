@@ -4,7 +4,7 @@ All code shared here is in "first draft" state, or what my editor displayed at t
 
 <br/>
 
-<img src="https://raw.githubusercontent.com/dirediredock/PythonToys/main/Figures/applet_turtleSpiral.png" width="100%">
+<img src="https://raw.githubusercontent.com/dirediredock/AdventOfCode2021/main/Figures/Day05_HydrothermalVents.png" width="100%">
 
 <p align = "center">
   <a href="https://github.com/dirediredock/PythonToys/blob/main/applet_turtleSpiral.py">applet_turtleSpiral.py</a>
