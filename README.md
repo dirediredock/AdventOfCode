@@ -11,3 +11,11 @@ All code shared here is in "first draft" state, or what my editor displayed at t
 </p>
 
 <br/>
+
+<img src="https://raw.githubusercontent.com/dirediredock/AdventOfCode2021/main/Figures/Day09_SmokeBasin.png" width="100%">
+
+<p align = "center">
+  <a href="https://github.com/dirediredock/AdventOfCode2021/blob/main/Day09.py">Day09.py</a>
+</p>
+
+<br/>
