@@ -200,3 +200,4 @@ for i in new_data:
 winner = sorted(scores)[len(scores) // 2]
 
 print(winner)
+
