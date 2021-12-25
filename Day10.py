@@ -41,7 +41,7 @@ def illegal_score(string):
                 S.deStack()
             else:
                 return 25137
-            
+
 import os
 
 scriptsPath = os.path.dirname(os.path.realpath(__file__))
@@ -191,7 +191,6 @@ def missing_brackets(string):
             score += 4
             flipped.append(">")
     return flipped, score
-
 
 scores = []
 for i in new_data:
