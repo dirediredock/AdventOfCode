@@ -7,7 +7,7 @@ All code shared here is in "first draft" state, or what my editor displayed at t
 <img src="https://raw.githubusercontent.com/dirediredock/AdventOfCode2021/main/Figures/Day05_HydrothermalVents.png" width="100%">
 
 <p align = "center">
-  <a href="https://github.com/dirediredock/AdventOfCode2021/blob/main/Day05.py">Day05.py</a>
+  <a href="https://github.com/dirediredock/AdventOfCode2021/blob/main/Day05_2021.py">Day05_2021.py</a>
 </p>
 
 <br/>
@@ -15,7 +15,7 @@ All code shared here is in "first draft" state, or what my editor displayed at t
 <img src="https://raw.githubusercontent.com/dirediredock/AdventOfCode2021/main/Figures/Day09_SmokeBasin.png" width="100%">
 
 <p align = "center">
-  <a href="https://github.com/dirediredock/AdventOfCode2021/blob/main/Day09.py">Day09.py</a>
+  <a href="https://github.com/dirediredock/AdventOfCode2021/blob/main/Day09_2021.py">Day09_2021.py</a>
 </p>
 
 <br/>
@@ -23,7 +23,7 @@ All code shared here is in "first draft" state, or what my editor displayed at t
 <img src="https://raw.githubusercontent.com/dirediredock/AdventOfCode2021/main/Figures/Day15_Chiton.png" width="100%">
 
 <p align = "center">
-  <a href="https://github.com/dirediredock/AdventOfCode2021/blob/main/Day15.py">Day15.py</a>
+  <a href="https://github.com/dirediredock/AdventOfCode2021/blob/main/Day15_2021.py">Day15_2021.py</a>
 </p>
 
 <br/>
