@@ -1,4 +1,4 @@
-# AdventOfCode2021
+# AdventOfCode 2021
 
 All code shared here is in "first draft" state, or what my editor displayed at the time of arriving at the correct solution. Some puzzles allow for awesome visualizations, which are displayed below.
 
